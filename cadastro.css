@@ -24,7 +24,7 @@ body {
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
     gap: 5px;
     width: 100%;
-    max-width: 400px; /* Limitar a largura máxima do formulário */
+    max-width: 400px; 
 }
 
 .formLogin h1 {
@@ -50,7 +50,7 @@ body {
     border-radius: 4px;
     transition: border-color 0.2s;
     outline: none;
-    width: 100%; /* Para garantir que o input ocupe 100% da largura */
+    width: 100%; 
 }
 
 .formLogin input:focus {
@@ -90,21 +90,20 @@ body {
     background-color: #ff0676;
 }
 
-/* Media Queries para Responsividade */
 @media (max-width: 600px) {
     .formLogin {
-        padding: 20px; /* Reduzir padding em telas menores */
+        padding: 20px; 
     }
 
     .formLogin h1 {
-        font-size: 1.8em; /* Reduzir o tamanho do título */
+        font-size: 1.8em; 
     }
 
     .formLogin input {
-        font-size: 12px; /* Ajustar o tamanho da fonte nos inputs */
+        font-size: 12px; 
     }
 
     .btn {
-        font-size: 12px; /* Ajustar o tamanho do botão */
+        font-size: 12px; 
     }
 }
