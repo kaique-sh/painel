@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci Minha Senha</title>
+    <link rel="stylesheet" href="esqueci-senha.css">
+</head>
+<body>
+    <div class="page">
+        <form method="POST" class="formEsqueciSenha">
+            <h1>Esqueci Minha Senha</h1>
+            <p>Digite seu e-mail para receber instruções de redefinição de senha.</p>
+            <label for="email">E-mail</label>
+            <input type="email" placeholder="Digite seu e-mail" required />
+            <input type="submit" value="Enviar" class="btn" />
+            <p>Voltar para <a href="index.html" class="btnCadastro">Login</a></p>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector('.formEsqueciSenha');
+
+            form.addEventListener('submit', function(event) {
+                const email = form.querySelector('input[type="email"]').value;
+
+                // Verificação se o campo está preenchido
+                if (!email) {
+                    alert("Por favor, preencha o campo de e-mail.");
+                    event.preventDefault(); // Impede o envio do formulário
+                    return;
+                }
+
+                // Verificação de formato de e-mail simples
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert("Por favor, insira um e-mail válido.");
+                    event.preventDefault(); // Impede o envio do formulário
+                    return;
+                }
+
+                // Se tudo estiver correto, aqui você pode adicionar a lógica para enviar o e-mail de redefinição
+                alert("Instruções de redefinição de senha foram enviadas para o seu e-mail.");
+            });
+        });
+    </script>
+</body>
+</html>
