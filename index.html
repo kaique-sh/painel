@@ -13,41 +13,44 @@
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
             <label for="email">E-mail</label>
-            <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+            <input type="email" placeholder="Digite seu e-mail" autofocus="true" required />
             <label for="password">Senha</label>
-            <input type="password" placeholder="Digite sua senha" />
+            <input type="password" placeholder="Digite sua senha" required />
             <a href="/">Esqueci minha senha</a>
-            <input type="submit" value="Acessar" class="btn" />
+            <input type="submit" value="Acessar" class="btn"/>
             <p>Não tem uma conta? <a href="cadastro.html" class="btnCadastro">Cadastre-se</a></p>
         </form>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector('.formLogin');
+
+            form.addEventListener('submit', function(event) {
+                const email = form.querySelector('input[type="email"]').value;
+                const password = form.querySelector('input[type="password"]').value;
+
+                // Verificação se todos os campos estão preenchidos
+                if (!email || !password) {
+                    alert("Por favor, preencha todos os campos.");
+                    event.preventDefault(); // Impede o envio do formulário
+                    return;
+                }
+
+                // Verificação de formato de e-mail simples
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert("Por favor, insira um e-mail válido.");
+                    event.preventDefault(); // Impede o envio do formulário
+                    return;
+                }
+
+                // Se todas as validações passarem, redireciona para o seu site
+                alert("Login realizado com sucesso!");
+                window.location.href = "meu site"; // Substitua pelo seu URL
+                event.preventDefault(); // Previne o envio do formulário
+            });
+        });
+    </script>
 </body>
 </html>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const form = document.querySelector('.formLogin');
-
-        form.addEventListener('submit', function(event) {
-            const email = form.querySelector('input[type="email"]').value;
-            const password = form.querySelector('input[type="password"]').value;
-
-            // Verificação se todos os campos estão preenchidos
-            if (!email || !password) {
-                alert("Por favor, preencha todos os campos.");
-                event.preventDefault(); // Impede o envio do formulário
-                return;
-            }
-
-            // Verificação de formato de e-mail simples
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert("Por favor, insira um e-mail válido.");
-                event.preventDefault(); // Impede o envio do formulário
-                return;
-            }
-
-            // Se todas as validações passarem
-            alert("Login realizado com sucesso!");
-        });
-    });
-</script>
