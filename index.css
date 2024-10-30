@@ -16,7 +16,6 @@ body {
     height: 100vh;
     background-color: #480ca8;
 }
-
 .formLogin {
     display: flex;
     flex-direction: column;
@@ -30,6 +29,8 @@ body {
 }
 
 .formLogin h1 {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaço abaixo do título, opcional */
     padding: 0;
     margin: 0;
     font-weight: 500;
