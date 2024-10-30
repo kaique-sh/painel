@@ -21,9 +21,46 @@
             <label for="confirm-password">Confirme a Senha</label>
             <input type="password" placeholder="Confirme sua senha" required />
             <input type="submit" value="Cadastrar" class="btn" />
-            <p>Já tem uma conta? <a href="/login" class="btnLogin">Faça login</a></p>
+            <p>Já tem uma conta? <a href="index.html" class="btnLogin">Faça login</a></p>
         </form>
     </div>
 </body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector('.formLogin');
+
+        form.addEventListener('submit', function(event) {
+            const name = form.querySelector('input[type="text"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const password = form.querySelector('input[type="password"]').value;
+            const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
+
+            // Verificação se todos os campos estão preenchidos
+            if (!name || !email || !password || !confirmPassword) {
+                alert("Por favor, preencha todos os campos.");
+                event.preventDefault(); // Impede o envio do formulário
+                return;
+            }
+
+            // Verificação se as senhas coincidem
+            if (password !== confirmPassword) {
+                alert("As senhas não coincidem. Tente novamente.");
+                event.preventDefault(); // Impede o envio do formulário
+                return;
+            }
+
+            // Verificação de formato de e-mail simples
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Por favor, insira um e-mail válido.");
+                event.preventDefault(); // Impede o envio do formulário
+                return;
+            }
+
+            // Se todas as validações passarem
+            alert("Cadastro realizado com sucesso!");
+        });
+    });
+</script>
 

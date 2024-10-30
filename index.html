@@ -18,9 +18,36 @@
             <input type="password" placeholder="Digite sua senha" />
             <a href="/">Esqueci minha senha</a>
             <input type="submit" value="Acessar" class="btn" />
-            <p>Não tem uma conta? <a href="/cadastro" class="btnCadastro">Cadastre-se</a></p>
+            <p>Não tem uma conta? <a href="cadastro.html" class="btnCadastro">Cadastre-se</a></p>
         </form>
     </div>
-    
 </body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector('.formLogin');
+
+        form.addEventListener('submit', function(event) {
+            const email = form.querySelector('input[type="email"]').value;
+            const password = form.querySelector('input[type="password"]').value;
+
+            // Verificação se todos os campos estão preenchidos
+            if (!email || !password) {
+                alert("Por favor, preencha todos os campos.");
+                event.preventDefault(); // Impede o envio do formulário
+                return;
+            }
+
+            // Verificação de formato de e-mail simples
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Por favor, insira um e-mail válido.");
+                event.preventDefault(); // Impede o envio do formulário
+                return;
+            }
+
+            // Se todas as validações passarem
+            alert("Login realizado com sucesso!");
+        });
+    });
+</script>
