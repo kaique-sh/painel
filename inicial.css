@@ -81,7 +81,36 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: #f1f1f1;
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: 0;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .produtos-grid {
+        justify-content: center;
+    }
+
+    .produto {
+        width: 90%; /* Use 90% da largura em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 20px;
+    }
+
+    .produto {
+        width: 100%; /* Use 100% da largura em telas muito pequenas */
+    }
+
+    button {
+        width: 100%; /* Botões ocupam a largura total */
+    }
 }

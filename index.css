@@ -4,14 +4,13 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: #023047
+    color: #023047;
 }
 
 .page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
@@ -25,11 +24,9 @@ body {
     border-radius: 7px;
     padding: 40px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    gap: 5px
-}
-
-.areaLogin img {
-    width: 420px;
+    gap: 5px;
+    width: 100%;
+    max-width: 400px; /* Limitar a largura máxima do formulário */
 }
 
 .formLogin h1 {
@@ -56,7 +53,6 @@ body {
     transition: all linear 160ms;
     outline: none;
 }
-
 
 .formLogin input:focus {
     border: 1px solid #f72585;
@@ -88,10 +84,50 @@ body {
     transition: all linear 160ms;
     cursor: pointer;
     margin: 0 !important;
-
 }
 
 .btn:hover {
     transform: scale(1.05);
     background-color: #ff0676;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+    .formLogin {
+        padding: 20px; /* Reduzir padding em telas pequenas */
+    }
+
+    .formLogin h1 {
+        font-size: 1.8em; /* Reduzir o tamanho do título */
+    }
+
+    .formLogin p {
+        font-size: 12px; /* Reduzir o tamanho do texto */
+    }
+    
+    .formLogin input {
+        font-size: 12px; /* Ajustar o tamanho da fonte nos inputs */
+    }
+
+    .btn {
+        font-size: 12px; /* Ajustar o tamanho do botão */
+    }
+}
+
+@media (max-width: 400px) {
+    .formLogin {
+        width: 90%; /* Formulário ocupa 90% da largura em telas muito pequenas */
+    }
+
+    .formLogin h1 {
+        font-size: 1.5em; /* Tamanho do título ainda menor */
+    }
+
+    .formLogin p {
+        font-size: 11px; /* Tamanho do texto ainda menor */
+    }
+
+    .formLogin input, .btn {
+        font-size: 11px; /* Tamanho do botão ainda menor */
+    }
 }

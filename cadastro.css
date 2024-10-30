@@ -1,16 +1,14 @@
-
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: #023047
+    color: #023047;
 }
 
 .page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
@@ -24,16 +22,14 @@ body {
     border-radius: 7px;
     padding: 40px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    gap: 5px
-}
-
-.areaLogin img {
-    width: 420px;
+    gap: 5px;
+    width: 100%;
+    max-width: 400px; /* Limitar a largura máxima do formulário */
 }
 
 .formLogin h1 {
     padding: 0;
-    margin: 0;
+    margin: 0 0 20px;
     font-weight: 500;
     font-size: 2.3em;
 }
@@ -52,10 +48,10 @@ body {
     margin-bottom: 20px;
     margin-top: 5px;
     border-radius: 4px;
-    transition: all linear 160ms;
+    transition: border-color 0.2s;
     outline: none;
+    width: 100%; /* Para garantir que o input ocupe 100% da largura */
 }
-
 
 .formLogin input:focus {
     border: 1px solid #f72585;
@@ -71,7 +67,7 @@ body {
     margin-bottom: 20px;
     font-size: 13px;
     color: #555;
-    transition: all linear 160ms;
+    transition: color 0.2s;
 }
 
 .formLogin a:hover {
@@ -84,13 +80,31 @@ body {
     font-size: 14px;
     font-weight: 600;
     border: none !important;
-    transition: all linear 160ms;
+    transition: background-color 0.3s, transform 0.2s;
     cursor: pointer;
     margin: 0 !important;
-
 }
 
 .btn:hover {
     transform: scale(1.05);
     background-color: #ff0676;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+    .formLogin {
+        padding: 20px; /* Reduzir padding em telas menores */
+    }
+
+    .formLogin h1 {
+        font-size: 1.8em; /* Reduzir o tamanho do título */
+    }
+
+    .formLogin input {
+        font-size: 12px; /* Ajustar o tamanho da fonte nos inputs */
+    }
+
+    .btn {
+        font-size: 12px; /* Ajustar o tamanho do botão */
+    }
 }

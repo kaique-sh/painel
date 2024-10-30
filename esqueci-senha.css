@@ -23,7 +23,8 @@ body {
     border-radius: 7px;
     padding: 40px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    width: 300px;
+    width: 100%;
+    max-width: 400px; /* Limitar a largura máxima do formulário */
     text-align: center;
 }
 
@@ -52,6 +53,7 @@ input[type="submit"] {
     cursor: pointer;
     border-radius: 5px;
     width: 100%;
+    transition: background-color 0.3s ease; /* Suavizar a transição da cor */
 }
 
 input[type="submit"]:hover {
@@ -65,4 +67,20 @@ input[type="submit"]:hover {
 
 .btnCadastro:hover {
     text-decoration: underline;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+    .formEsqueciSenha {
+        padding: 20px; /* Reduzir o padding em telas menores */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Reduzir o tamanho do título */
+    }
+
+    input[type="email"],
+    input[type="submit"] {
+        padding: 8px; /* Ajustar o padding dos inputs em telas pequenas */
+    }
 }
