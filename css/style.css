@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -10,23 +10,22 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #e3e9f7;
+    background-color: rgb(39, 36, 36);;
 }
 
 main {
     padding: 20px;
-    flex-grow: 1;
-    transition: margin-left 0.5s; /* Smooth transition for main content */
+    margin-left: 82px; /* Define a margem à esquerda igual à largura do sidebar */
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
 }
-
 #sidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: white;
+    background-color: rgb(12, 12, 12);
     height: 100vh;
-    border-radius: 0 18px 18px 0;
-    transition: min-width 0.5s;
+    position: relative;
+    transition: all .5s;
     min-width: 82px;
     z-index: 2;
 }
@@ -36,15 +35,14 @@ main {
 }
 
 #user {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 24px;
+    display: flex; /* Torna o div flexível */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
 }
 
 #user_avatar {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 20px;
 }
@@ -70,22 +68,21 @@ main {
     border-radius: 8px;
     padding: 14px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #fcc509;
 }
-
 .side-item.active {
     background-color: #fcc509;
 }
-
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #e8bb25;
+    background-color: #1c1c1c;
 }
 
 .side-item a {
     text-decoration: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: #0a0a0a;
 }
 
@@ -94,33 +91,41 @@ main {
 }
 
 .side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 20px;
     height: 20px;
 }
 
 #logout {
-    border-top: 1px solid #e3e9f7;
-    padding: 12px;
+    border-top: 0px solid #31302e;
+    padding: 2px;
+}
+#logout_btn i{
+    margin-left: 18px;
 }
 
 #logout_btn {
-    border: none;
-    padding: 12px;
-    font-size: 14px;
+    padding: 14px; /* Mantenha o mesmo padding que os outros botões */
+    font-size: 14px; /* Tamanho da fonte */
     display: flex;
     gap: 20px;
     align-items: center;
     border-radius: 8px;
+    text-align: start;
     cursor: pointer;
-    background-color: transparent;
+    background-color: #fcc509; /* Cor de fundo */
+    color: black; /* Cor do texto */
+    width: 100%; /* Faz o botão ocupar toda a largura disponível */
 }
 
 #open_btn {
     position: absolute;
     top: 30px;
     right: -10px;
-    background-color: #4f46e5;
-    color: #e3e9f7;
+    background-color: #fcc509;
+    color: #24262a;
     border-radius: 100%;
     width: 20px;
     height: 20px;
@@ -128,12 +133,8 @@ main {
     cursor: pointer;
 }
 
-#open_btn:hover {
-    background-color: #3c3c8c; /* Cor ao passar o mouse */
-}
-
 #open_btn_icon {
-    transition: transform 0.3s ease;
+    transition: transform .3s ease;
 }
 
 .open-sidebar #open_btn_icon {
@@ -141,17 +142,18 @@ main {
 }
 
 .item-description {
-    width: 0;
+    width: 0px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 14px;
-    transition: width 0.6s, height 0.6s;
-    height: 0;
+    transition: width .6s;
+    height: 0px;
+    color: black;
 }
 
 #sidebar.open-sidebar {
-    min-width: 200px; /* Aumenta a largura ao abrir */
+    min-width: 15%;
 }
 
 #sidebar.open-sidebar .item-description {
@@ -162,19 +164,4 @@ main {
 #sidebar.open-sidebar .side-item a {
     justify-content: flex-start;
     gap: 14px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    #sidebar {
-        min-width: 60px; /* Largura mínima para telas pequenas */
-    }
-
-    #sidebar.open-sidebar {
-        min-width: 180px; /* Largura ao abrir em telas pequenas */
-    }
-
-    main {
-        padding: 10px; /* Reduz o padding em telas pequenas */
-    }
 }
