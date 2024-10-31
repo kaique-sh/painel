@@ -10,14 +10,16 @@ header {
     background-color: #24252a;
     box-shadow: 0px 3px 10px #464646;
 }
+
 .logo img {
-    max-height: 200px;
+    max-height: 100px; /* Diminui a altura máxima da logo */
     height: auto;
 }
+
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 6rem;
+    padding: 0.75rem 3rem; /* Diminui o padding do header */
 }
 
 .logo {
@@ -46,7 +48,7 @@ header {
 
 .nav-link {
     text-decoration: none;
-    font-size: 1.3rem; /* Aumenta o tamanho da fonte */
+    font-size: 1.2rem; /* Ajusta o tamanho da fonte */
     color: #fff;
     font-weight: 450;
     transition: color 0.3s;
@@ -55,18 +57,20 @@ header {
 .nav-link:hover {
     color: #fcc509;
 }
+
 .login-button {
-    display: flex; /* Permite centralizar o conteúdo dentro do botão */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
+
 .login-button button {
     border: none;
-    padding: 15px 30px; /* Aumenta o padding para deixar o botão maior */
+    padding: 10px 20px; /* Ajusta o padding do botão */
     border-radius: 5px;
     background-color: #fcc509;
-    font-size: 1.2rem; /* Aumenta o tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1rem; /* Ajusta o tamanho da fonte do botão */
+    cursor: pointer; 
     transition: background-color 0.3s;
 }
 
@@ -76,21 +80,22 @@ header {
     font-weight: 500;
 }
 
-
 .login-button button:hover {
-    background-color: #e0a600; /* Uma cor levemente mais escura ao passar o mouse */
+    background-color: #e0a600; 
 }
 
 .mobile-menu-icon {
     display: none;
+    align-items: center;
 }
 
 .mobile-menu {
     display: none;
 }
+
 @media screen and (max-width: 730px) {
     .nav-bar {
-        padding: 1.5rem 4rem;
+        padding: 1rem 2rem; /* Ajusta o padding em telas menores */
     }
     .nav-item {
         display: none;
@@ -99,12 +104,17 @@ header {
         display: none;
     }
     .mobile-menu-icon {
-        display: block;
+        display: block; /* Garante que o ícone seja um bloco */
+        width: 30px; /* Define uma largura fixa */
+        height: 30px; /* Define uma altura fixa */
     }
     .mobile-menu-icon button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
+        background-color: transparent; /* Fundo transparente */
+        border: none; /* Sem borda */
+        cursor: pointer; /* Muda o cursor para indicar que é clicável */
+        font-size: 1.5rem; /* Ajusta o tamanho do ícone */
+        color: #fff; /* Cor do ícone */
+        padding: 0; /* Remove o padding do botão */
     }
     .mobile-menu ul {
         display: flex;
@@ -127,4 +137,5 @@ header {
         display: block;
     }
 }
+
 
