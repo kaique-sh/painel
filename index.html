@@ -12,8 +12,8 @@
         <form method="POST" class="formLogin">
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
-            <label for="email">E-mail</label>
-            <input type="text" id="email" placeholder="Digite seu usuário" autofocus="true" required />
+            <label for="usuario">usuario</label>
+            <input type="text" id="usuario" placeholder="Digite seu usuário" autofocus="true" required />
             <label for="password">Senha</label>
             <input type="password" id="password" placeholder="Digite sua senha" required />
             <a href="esqueci-senha.html">Esqueci minha senha</a>
@@ -26,18 +26,18 @@
             const form = document.querySelector('.formLogin');
 
             form.addEventListener('submit', function(event) {
-                const email = form.querySelector('#email').value;
+                const usuario = form.querySelector('#usuario').value;
                 const password = form.querySelector('#password').value;
 
                 // Verificação se todos os campos estão preenchidos
-                if (!email || !password) {
+                if (!usuario || !password) {
                     alert("Por favor, preencha todos os campos.");
                     event.preventDefault(); // Impede o envio do formulário
                     return;
                 }
 
                 // Validação das credenciais
-                if (email === "admin" && password === "admin") {
+                if (usuario === "admin" && password === "admin") {
                     alert("Login realizado com sucesso!");
                     window.location.href = ""; // Substitua pelo seu URL
                 } else {
