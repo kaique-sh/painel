@@ -12,8 +12,8 @@
         <form method="POST" class="formLogin">
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
-            <label for="usuario">usuario</label>
-            <input type="text" id="usuario" placeholder="Digite seu usuário" autofocus="true" required />
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" placeholder="Digite seu usuário" autofocus required />
             <label for="password">Senha</label>
             <input type="password" id="password" placeholder="Digite sua senha" required />
             <a href="esqueci-senha.html">Esqueci minha senha</a>
@@ -24,22 +24,23 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const form = document.querySelector('.formLogin');
-
+    
             form.addEventListener('submit', function(event) {
-                const usuario = form.querySelector('#usuario').value;
-                const password = form.querySelector('#password').value;
-
+                const usuario = document.getElementById('usuario').value;
+                const password = document.getElementById('password').value;
+    
                 // Verificação se todos os campos estão preenchidos
                 if (!usuario || !password) {
                     alert("Por favor, preencha todos os campos.");
                     event.preventDefault(); // Impede o envio do formulário
                     return;
                 }
-
+    
                 // Validação das credenciais
                 if (usuario === "admin" && password === "admin") {
                     alert("Login realizado com sucesso!");
-                    window.location.href = ""; // Substitua pelo seu URL
+                    // Redireciona para o URL correto
+                    window.location.href = "http://15.228.244.225/PAINEL-XYL/logado.html"; 
                 } else {
                     alert("Usuário ou senha incorretos.");
                     event.preventDefault(); // Impede o envio do formulário
@@ -47,5 +48,7 @@
             });
         });
     </script>
+    
+    
 </body>
 </html>
