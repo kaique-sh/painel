@@ -10,7 +10,7 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: rgb(39, 36, 36);;
+    background-color: #e3e9f7;
 }
 
 main {
@@ -100,7 +100,7 @@ main {
 
 #logout {
     border-top: 0px solid #31302e;
-    padding: 2px;
+    padding: 10px;
 }
 #logout_btn i{
     margin-left: 18px;

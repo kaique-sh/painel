@@ -8,79 +8,67 @@
     <title>DrakeTv</title>
 </head>
 <body>
-    <nav id="sidebar">
+    <nav id="sidebar" aria-label="Navegação">
         <div id="sidebar_content">
             <div id="user">
-                <img src="img/Yellow and Black Modern TV Entertainment Logo.png" id="user_avatar" alt="Avatar">
+                <img src="img/Yellow and Black Modern TV Entertainment Logo.png" id="user_avatar" alt="Avatar do Usuário">
             </div>
     
             <ul id="side_items">
                 <li class="side-item">
                     <a href="#">
                         <i class="bi bi-person-fill"></i>
-                        <span class="item-description">
-                            Usuários
-                        </span>
+                        <span class="item-description">Usuários</span>
                     </a>
                 </li>
     
                 <li class="side-item">
                     <a href="#">
                         <i class="bi bi-bell-fill"></i>
-                        <span class="item-description">
-                            Notificações
-                        </span>
+                        <span class="item-description">Notificações</span>
                     </a>
                 </li>
     
                 <li class="side-item">
                     <a href="#">
                         <i class="bi bi-cart4"></i>
-                        <span class="item-description">
-                            Produtos
-                        </span>
+                        <span class="item-description">Produtos</span>
                     </a>
                 </li>
     
                 <li class="side-item">
                     <a href="#">
                         <i class="bi bi-card-image"></i>
-                        <span class="item-description">
-                            Imagens
-                        </span>
+                        <span class="item-description">Imagens</span>
                     </a>
                 </li>
     
                 <li class="side-item">
                     <a href="#">
                         <i class="bi bi-gear-wide-connected"></i>
-                        <span class="item-description">
-                            Configurações
-                        </span>
+                        <span class="item-description">Configurações</span>
                     </a>
                 </li>
 
                 <li class="side-item">
                     <a href="#">
                         <i class="bi bi-person-rolodex"></i>
-                        <span class="item-description">
-                            Admin
-                        </span>
+                        <span class="item-description">Admin</span>
                     </a>
                 </li>
             </ul>
     
-            <button id="open_btn">
+            <button id="open_btn" aria-label="Abrir Menu">
                 <i class="bi bi-arrow-left-circle-fill"></i>
             </button>
         </div>
 
         <div id="logout">
             <button id="logout_btn">
-                <i class="bi bi-door-open-fill"></i>
-                <span class="item-description">
-                    Logout
-                </span>
+                <a href="index.html" aria-label="Logout" style="text-decoration: none; color: inherit;">
+                    <i class="bi bi-door-open-fill"></i>
+                    <span class="item-description">Logout</span>
+                </a>
             </button>
         </div>
     </nav>
