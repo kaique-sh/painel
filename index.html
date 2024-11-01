@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="page">
-        <form method="POST" class="formLogin">
+        <form class="formLogin">
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
             <label for="usuario">Usuário</label>
@@ -28,7 +28,7 @@
             form.addEventListener('submit', function(event) {
                 const usuario = document.getElementById('usuario').value;
                 const password = document.getElementById('password').value;
-    
+
                 // Verificação se todos os campos estão preenchidos
                 if (!usuario || !password) {
                     alert("Por favor, preencha todos os campos.");
@@ -38,9 +38,7 @@
     
                 // Validação das credenciais
                 if (usuario === "admin" && password === "admin") {
-                    alert("Login realizado com sucesso!");
-                    // Redireciona para o URL correto
-                    window.location.href = "http://15.228.244.225/PAINEL-XYL/logado.html"; 
+                    window.location.href = "logado.html"; // Redireciona para logado.html
                 } else {
                     alert("Usuário ou senha incorretos.");
                     event.preventDefault(); // Impede o envio do formulário
@@ -48,7 +46,5 @@
             });
         });
     </script>
-    
-    
 </body>
 </html>
