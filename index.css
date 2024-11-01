@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap');
+
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     margin: 0;
     padding: 0;
     color: #023047;
@@ -15,29 +16,34 @@ body {
     height: 100vh;
     background-color: rgb(12, 12, 12);
 }
+
 .formLogin {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border-radius: 7px;
+    border-radius: 10px;
     padding: 40px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
     gap: 5px;
     width: 100%;
-    max-width: 400px; 
+    max-width: 350px; 
+}
+
+.logo {
+    max-width: 60%;  /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto; 
+    margin: 0 auto 20px auto; /* Centraliza horizontalmente */
+    display: block; /* Garante que a imagem se comporte como um bloco */
 }
 
 .formLogin h1 {
     text-align: center; 
-    margin-bottom: 20px; 
-    padding: 0;
-    margin: 0;
+    margin: 0 0 20px; 
     font-weight: 500;
     font-size: 2.3em;
 }
 
 .formLogin p {
-    display: inline-block;
     font-size: 14px;
     color: #666;
     margin-bottom: 25px;
