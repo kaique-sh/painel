@@ -12,10 +12,10 @@ function menuShow() {
     }
 }
 
+// Alterna a sidebar
 function toggleSidebar() {
     let sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('open-sidebar'); // Alterna a classe da sidebar
-    // Alterna ícone do botão
     let icon = document.getElementById('open_btn').querySelector('i');
     if (sidebar.classList.contains('open-sidebar')) {
         icon.classList.remove('bi-arrow-left-circle-fill');
